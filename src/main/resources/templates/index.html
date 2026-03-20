@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV cá nhân - Sinh viên HUTECH">
+    <title>CV Cá Nhân - Spring Boot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>My CV</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+                <li><a href="#education" class="nav-link">Học vấn</a></li>
+                <li><a href="#skills" class="nav-link">Kỹ năng</a></li>
+                <li><a href="#projects" class="nav-link">Dự án</a></li>
+                <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting animate-fade-up">Xin chào, tôi là</p>
+                <h1 class="hero-name animate-fade-up delay-1">Nguyễn Văn A</h1>
+                <p class="hero-title animate-fade-up delay-2">
+                    <span class="typing-text">Sinh viên Công nghệ Thông tin</span>
+                </p>
+                <p class="hero-description animate-fade-up delay-3">
+                    Sinh viên năm 3 tại Đại học HUTECH, đam mê phát triển ứng dụng web
+                    và luôn tìm kiếm cơ hội học hỏi công nghệ mới.
+                </p>
+                <div class="hero-buttons animate-fade-up delay-4">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Liên hệ
+                    </a>
+                    <a href="#projects" class="btn btn-outline">
+                        <i class="fas fa-folder-open"></i> Dự án
+                    </a>
+                </div>
+            </div>
+            <div class="hero-avatar animate-fade-up delay-2">
+                <div class="avatar-wrapper">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-placeholder">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+                <div class="avatar-dots">
+                    <span class="dot dot-1"></span>
+                    <span class="dot dot-2"></span>
+                    <span class="dot dot-3"></span>
+                    <span class="dot dot-4"></span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p>Cuộn xuống</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-user"></i></span>
+                Giới thiệu bản thân
+            </h2>
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Ngày sinh</h3>
+                    <p>01/01/2003</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Địa chỉ</h3>
+                    <p>TP. Hồ Chí Minh</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Điện thoại</h3>
+                    <p>0123 456 789</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>email@hutech.edu.vn</p>
+                </div>
+            </div>
+            <div class="about-summary glass-card">
+                <h3><i class="fas fa-quote-left"></i> Tóm tắt</h3>
+                <p>
+                    Tôi là sinh viên năm 3 ngành Công nghệ Thông tin tại Đại học Công nghệ TP.HCM (HUTECH).
+                    Với niềm đam mê lập trình và phát triển phần mềm, tôi luôn nỗ lực học hỏi và áp dụng
+                    kiến thức vào các dự án thực tế. Tôi có kinh nghiệm với Java, Spring Boot, React,
+                    và các công nghệ DevOps như Docker và GitHub Actions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section section-alt" id="education">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-graduation-cap"></i></span>
+                Học vấn
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-badge">2021 - Hiện tại</div>
+                        <h3>Đại học Công nghệ TP.HCM (HUTECH)</h3>
+                        <p class="timeline-subtitle">Cử nhân Công nghệ Thông tin</p>
+                        <ul class="timeline-details">
+                            <li><i class="fas fa-check-circle"></i> GPA: 3.2/4.0</li>
+                            <li><i class="fas fa-check-circle"></i> Tham gia CLB Lập trình</li>
+                            <li><i class="fas fa-check-circle"></i> Sinh viên tiêu biểu khoa CNTT</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-badge">2018 - 2021</div>
+                        <h3>THPT Nguyễn Thị Minh Khai</h3>
+                        <p class="timeline-subtitle">Tốt nghiệp loại Giỏi</p>
+                        <ul class="timeline-details">
+                            <li><i class="fas fa-check-circle"></i> Điểm tổng kết: 8.5/10</li>
+                            <li><i class="fas fa-check-circle"></i> Giải 3 Olympic Tin học cấp thành phố</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-cogs"></i></span>
+                Kỹ năng
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-code"></i> Ngôn ngữ lập trình</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Java</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="60"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML/CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-server"></i> Framework & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-java"></i> Spring Boot</span>
+                        <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                        <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-tag"><i class="fab fa-github"></i> GitHub Actions</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
+                        <span class="skill-tag"><i class="fas fa-cloud"></i> REST API</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-brain"></i> Kỹ năng mềm</h3>
+                    <div class="soft-skills">
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><i class="fas fa-users"></i></div>
+                            <span>Làm việc nhóm</span>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><i class="fas fa-comments"></i></div>
+                            <span>Giao tiếp</span>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><i class="fas fa-lightbulb"></i></div>
+                            <span>Sáng tạo</span>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><i class="fas fa-clock"></i></div>
+                            <span>Quản lý thời gian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-project-diagram"></i></span>
+                Dự án nổi bật
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>E-Commerce Website</h3>
+                    <p>Website bán hàng trực tuyến với đầy đủ chức năng CRUD, giỏ hàng, thanh toán.</p>
+                    <div class="project-tech">
+                        <span>Spring Boot</span>
+                        <span>React</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>CV Portfolio</h3>
+                    <p>Trang web CV cá nhân được xây dựng với Spring Boot và triển khai bằng Docker.</p>
+                    <div class="project-tech">
+                        <span>Spring Boot</span>
+                        <span>Thymeleaf</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-tasks"></i></div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>Task Management App</h3>
+                    <p>Ứng dụng quản lý công việc với tính năng phân quyền, notification.</p>
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>REST API</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-address-book"></i></span>
+                Liên hệ
+            </h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>email@hutech.edu.vn</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>Điện thoại</h4>
+                            <p>0123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Địa chỉ</h4>
+                            <p>TP. Hồ Chí Minh, Việt Nam</p>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form glass-card">
+                    <h3>Gửi tin nhắn cho tôi</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" placeholder="Nhập họ và tên...">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Nhập email...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tin nhắn</label>
+                            <textarea id="message" rows="4" placeholder="Nhập tin nhắn..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-code"></i>
+                    <span>CV App</span>
+                </div>
+                <p>&copy; 2024 - Được xây dựng với <i class="fas fa-heart" style="color: #ef4444;"></i> bằng Spring Boot & Docker</p>
+                <p class="footer-tech">
+                    <span><i class="fab fa-java"></i> Java 21</span>
+                    <span><i class="fas fa-leaf"></i> Spring Boot</span>
+                    <span><i class="fab fa-docker"></i> Docker</span>
+                    <span><i class="fab fa-github"></i> GitHub Actions</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>
