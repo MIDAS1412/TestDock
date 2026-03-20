@@ -18,7 +18,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: 'quangdung1'
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Step 3: Set up Docker Buildx
@@ -33,5 +33,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/cv-app:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/cv-app:${{ github.sha }}
+            quangdung1/cv-app:latest
+            quangdung1/cv-app:${{ github.sha }}
