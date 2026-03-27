@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/NNPTUD-C4';
+var dbStatus = 'connecting';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +22,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/health', function (req, res) {
-  res.send({ status: 'ok' });
+  res.send({
+    status: 'ok',
+    database: dbStatus
+  });
 });
 
 app.use('/', indexRouter);
@@ -33,17 +37,35 @@ app.use('/api/v1/categories', require('./routes/categories'))
 app.use('/api/v1/auth', require('./routes/auth'))
 app.use('/api/v1/inventory', require('./routes/inventory'))
 
+mongoose.connect(mongoUri)
+  .then(function () {
+    dbStatus = 'connected';
+    console.log('connected');
+  })
+  .catch(function (error) {
+    dbStatus = 'unavailable';
+    console.error('MongoDB connection failed:', error.message);
+  });
 
-mongoose.connect(mongoUri);
 mongoose.connection.on('connected', function () {
-  console.log("connected");
-})
+  dbStatus = 'connected';
+  console.log('connected');
+});
+
+mongoose.connection.on('error', function (error) {
+  dbStatus = 'unavailable';
+  console.error('MongoDB error:', error.message);
+});
+
 mongoose.connection.on('disconnected', function () {
-  console.log("disconnected");
-})
+  dbStatus = 'disconnected';
+  console.log('disconnected');
+});
+
 mongoose.connection.on('disconnecting', function () {
-  console.log("disconnecting");
-})
+  dbStatus = 'disconnecting';
+  console.log('disconnecting');
+});
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
