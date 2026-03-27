@@ -7,72 +7,87 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/stylesheets/home.css">
+  <link rel="stylesheet" href="/stylesheets/home.css?v={{assetVersion}}">
 </head>
 <body>
   <main class="resume-shell">
     <section class="resume-frame">
       <header class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">{{role}}</p>
+          <p class="eyebrow">{{location}} | {{role}}</p>
           <h1>{{title}}</h1>
+          <p class="hero-role">{{role}}</p>
           <p class="summary">{{summary}}</p>
 
-          <div class="hero-tags">
-            {{#each highlights}}
-              <span class="hero-tag">{{this}}</span>
-            {{/each}}
+          <div class="action-row">
+            <a class="button primary" href="https://github.com/MIDAS1412">Xem GitHub</a>
+            <a class="button secondary" href="mailto:dungquangnguyen118@gmail.com">Lien he nhanh</a>
           </div>
         </div>
 
-        <section class="panel hero-panel">
-          <p class="section-label">Quick Contact</p>
-          <dl class="contact-grid">
-            {{#each contacts}}
-              <div class="contact-item">
-                <dt>{{label}}</dt>
-                <dd>
-                  {{#if href}}
-                    <a href="{{href}}">{{value}}</a>
-                  {{else}}
-                    <span>{{value}}</span>
-                  {{/if}}
-                </dd>
-              </div>
-            {{/each}}
-          </dl>
-        </section>
+        <aside class="panel hero-panel">
+          <div class="focus-badge">NQD</div>
+          <p class="section-label">Current Focus</p>
+          <h2>{{focusTitle}}</h2>
+          <p class="body-copy">{{focusText}}</p>
+        </aside>
       </header>
 
       <div class="content-grid">
         <aside class="sidebar">
           <section class="panel">
-            <p class="section-label">Education</p>
-            <h2>{{education.major}}</h2>
-            <p class="meta">{{education.school}}</p>
-            <p class="meta">{{education.period}}</p>
+            <p class="section-label">Thong tin</p>
+            <h2>Ho so ca nhan</h2>
+            <div class="fact-list">
+              {{#each profileFacts}}
+                <article class="fact-item">
+                  <p class="fact-label">{{label}}</p>
+                  <p class="fact-value">{{value}}</p>
+                </article>
+              {{/each}}
+            </div>
           </section>
 
           <section class="panel">
-            <p class="section-label">Skills</p>
+            <p class="section-label">Lien he</p>
+            <h2>Ket noi</h2>
+            <dl class="contact-stack">
+              {{#each contacts}}
+                <div class="contact-row">
+                  <dt>{{label}}</dt>
+                  <dd>
+                    {{#if href}}
+                      <a href="{{href}}">{{value}}</a>
+                    {{else}}
+                      <span>{{value}}</span>
+                    {{/if}}
+                  </dd>
+                </div>
+              {{/each}}
+            </dl>
+          </section>
+
+          <section class="panel">
+            <p class="section-label">Ky nang</p>
+            <h2>Core Skills</h2>
             <div class="pill-grid">
               {{#each skills}}
                 <span class="pill">{{this}}</span>
               {{/each}}
             </div>
-          </section>
-
-          <section class="panel">
-            <p class="section-label">Tools</p>
-            <div class="pill-grid">
-              {{#each tools}}
-                <span class="pill alt">{{this}}</span>
-              {{/each}}
+            <div class="subsection">
+              <p class="mini-label">Tools</p>
+              <div class="pill-grid">
+                {{#each tools}}
+                  <span class="pill alt">{{this}}</span>
+                {{/each}}
+              </div>
             </div>
           </section>
 
           <section class="panel">
-            <p class="section-label">Certificates</p>
+            <p class="section-label">Chung chi</p>
+            <h2>Certificates</h2>
             <div class="certificate-list">
               {{#each certificates}}
                 <article class="certificate-item">
@@ -90,12 +105,32 @@
 
         <section class="main-column">
           <section class="panel">
-            <p class="section-label">About Me</p>
-            <p class="body-copy">{{summary}}</p>
+            <p class="section-label">Objective</p>
+            <h2>Dinh huong nghe nghiep</h2>
+            <p class="body-copy">{{objective}}</p>
+
+            <div class="mini-card-grid">
+              {{#each objectiveCards}}
+                <article class="mini-card">{{this}}</article>
+              {{/each}}
+            </div>
+          </section>
+
+          <section class="panel">
+            <p class="section-label">Education</p>
+            <h2>Hoc van</h2>
+            <article class="education-card">
+              <p class="education-period">{{education.period}}</p>
+              <div>
+                <p class="education-major">{{education.major}}</p>
+                <p class="meta">{{education.school}}</p>
+              </div>
+            </article>
           </section>
 
           <section class="panel">
             <p class="section-label">Projects</p>
+            <h2>Du an tieu bieu</h2>
             <div class="project-list">
               {{#each projects}}
                 <article class="project-item">

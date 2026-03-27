@@ -4,13 +4,23 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
+    assetVersion: '20260327-3',
     title: 'Nguy\u1ec5n Quang D\u0169ng',
     role: 'Front-end Developer (Intern/Fresher)',
+    location: 'Thu Duc, Ho Chi Minh City',
     summary: 'Information Technology student passionate about building user interfaces (UI/UX). Seeking a Front-end Developer internship to apply knowledge of HTML, CSS, JavaScript, and frameworks such as React or Vue in real projects.',
+    focusTitle: 'Build polished web interfaces that are practical for real deployment.',
+    focusText: 'Ready to join a front-end internship, contribute responsive UI work, and keep improving through hands-on product delivery.',
+    objective: 'Looking for an internship where I can strengthen front-end engineering skills, collaborate with a real team, and build products that solve practical problems.',
     highlights: [
-      'Open to Front-end Internship',
-      'Responsive UI and React',
-      'Based in Thu Duc, Ho Chi Minh City'
+      'Responsive UI with React',
+      'Clean HTML, CSS, JavaScript foundation',
+      'Fast learner with product mindset'
+    ],
+    objectiveCards: [
+      'Build responsive interfaces that are easy to use and easy to maintain.',
+      'Contribute React-based features and improve UI quality in real products.',
+      'Grow through teamwork, shipping, and real deployment workflows.'
     ],
     contacts: [
       { label: 'Phone', value: '0786121131', href: 'tel:0786121131' },
@@ -18,6 +28,11 @@ router.get('/', function(req, res, next) {
       { label: 'Email', value: 'dungquangnguyen118@gmail.com', href: 'mailto:dungquangnguyen118@gmail.com' },
       { label: 'GitHub', value: 'github.com/MIDAS1412', href: 'https://github.com/MIDAS1412' },
       { label: 'Location', value: 'Thu Duc, Ho Chi Minh City' }
+    ],
+    profileFacts: [
+      { label: 'Ngay sinh', value: '14/12/2004' },
+      { label: 'Vi tri', value: 'Front-end Developer Intern/Fresher' },
+      { label: 'Dinh huong', value: 'UI implementation and product-facing frontend work' }
     ],
     education: {
       major: 'Software Engineering',
