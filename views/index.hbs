@@ -10,32 +10,112 @@
   <link rel="stylesheet" href="/stylesheets/home.css">
 </head>
 <body>
-  <main class="hero-shell">
-    <section class="hero-card">
-      <p class="eyebrow">GitHub Actions Deployment</p>
-      <h1>{{title}}</h1>
-      <p class="headline">{{headline}}</p>
-      <p class="description">{{description}}</p>
+  <main class="resume-shell">
+    <section class="resume-frame">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">{{role}}</p>
+          <h1>{{title}}</h1>
+          <p class="summary">{{summary}}</p>
+        </div>
 
-      <div class="action-row">
-        <a class="button primary" href="{{primaryAction}}">Open Inventory API</a>
-        <a class="button secondary" href="{{secondaryAction}}">Check Health</a>
+        <dl class="contact-grid">
+          {{#each contacts}}
+            <div class="contact-item">
+              <dt>{{label}}</dt>
+              <dd>
+                {{#if href}}
+                  <a href="{{href}}">{{value}}</a>
+                {{else}}
+                  <span>{{value}}</span>
+                {{/if}}
+              </dd>
+            </div>
+          {{/each}}
+        </dl>
+      </header>
+
+      <div class="content-grid">
+        <aside class="sidebar">
+          <section class="panel">
+            <p class="section-label">Education</p>
+            <h2>{{education.major}}</h2>
+            <p class="meta">{{education.school}}</p>
+            <p class="meta">{{education.period}}</p>
+          </section>
+
+          <section class="panel">
+            <p class="section-label">Skills</p>
+            <div class="pill-grid">
+              {{#each skills}}
+                <span class="pill">{{this}}</span>
+              {{/each}}
+            </div>
+          </section>
+
+          <section class="panel">
+            <p class="section-label">Tools</p>
+            <div class="pill-grid">
+              {{#each tools}}
+                <span class="pill alt">{{this}}</span>
+              {{/each}}
+            </div>
+          </section>
+
+          <section class="panel">
+            <p class="section-label">Certificates</p>
+            <div class="certificate-list">
+              {{#each certificates}}
+                <article class="certificate-item">
+                  <p class="certificate-year">{{year}}</p>
+                  {{#if href}}
+                    <a href="{{href}}">{{name}}</a>
+                  {{else}}
+                    <span>{{name}}</span>
+                  {{/if}}
+                </article>
+              {{/each}}
+            </div>
+          </section>
+        </aside>
+
+        <section class="main-column">
+          <section class="panel">
+            <p class="section-label">About Me</p>
+            <p class="body-copy">{{summary}}</p>
+          </section>
+
+          <section class="panel">
+            <p class="section-label">Projects</p>
+            <div class="project-list">
+              {{#each projects}}
+                <article class="project-item">
+                  <div class="project-head">
+                    <div>
+                      <p class="project-role">{{role}}</p>
+                      <h2>{{name}}</h2>
+                    </div>
+                    <p class="project-period">{{period}}</p>
+                  </div>
+
+                  <p class="body-copy">{{description}}</p>
+
+                  <ul class="bullet-list">
+                    {{#each bullets}}
+                      <li>{{this}}</li>
+                    {{/each}}
+                  </ul>
+
+                  <div class="project-meta">
+                    <p><strong>Tech:</strong> {{tech}}</p>
+                    <p><strong>GitHub:</strong> <a href="{{repo}}">{{repo}}</a></p>
+                  </div>
+                </article>
+              {{/each}}
+            </div>
+          </section>
+        </section>
       </div>
-
-      <dl class="stats-grid">
-        <div class="stat-item">
-          <dt>Container Port</dt>
-          <dd>{{containerPort}}</dd>
-        </div>
-        <div class="stat-item">
-          <dt>Deploy Flow</dt>
-          <dd>Docker Hub + Webhook</dd>
-        </div>
-        <div class="stat-item">
-          <dt>Deploy Slot</dt>
-          <dd>{{deploySlot}}</dd>
-        </div>
-      </dl>
     </section>
   </main>
 </body>
