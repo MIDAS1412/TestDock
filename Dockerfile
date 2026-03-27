@@ -1,24 +1,18 @@
-# Stage 1: Build the application
-FROM maven:3.9.6-eclipse-temurin-21-alpine AS build
-WORKDIR /app
-COPY pom.xml .
-RUN mvn dependency:go-offline -B
-COPY src ./src
-RUN mvn clean package -DskipTests -B
+FROM node:20-alpine
 
-# Stage 2: Run the application
-FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
-# Copy the built JAR from build stage
-COPY --from=build /app/target/*.jar app.jar
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
 
-# Expose port
-EXPOSE 8080
+COPY . .
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s \
-    CMD wget --quiet --tries=1 --spider http://localhost:8080/ || exit 1
+ENV NODE_ENV=production
+ENV PORT=3000
 
-# Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+EXPOSE 3000
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
+    CMD wget -qO- http://127.0.0.1:3000/health || exit 1
+
+CMD ["node", "./bin/www"]

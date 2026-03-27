@@ -1,7 +1,13 @@
 .git
 .github
+node_modules/
 target/
 *.md
 .idea/
 *.iml
 .vscode/
+.env
+private.pem
+public.pem
+token.txt
+Inventory-API.postman_collection.json
