@@ -17,22 +17,31 @@
           <p class="eyebrow">{{role}}</p>
           <h1>{{title}}</h1>
           <p class="summary">{{summary}}</p>
+
+          <div class="hero-tags">
+            {{#each highlights}}
+              <span class="hero-tag">{{this}}</span>
+            {{/each}}
+          </div>
         </div>
 
-        <dl class="contact-grid">
-          {{#each contacts}}
-            <div class="contact-item">
-              <dt>{{label}}</dt>
-              <dd>
-                {{#if href}}
-                  <a href="{{href}}">{{value}}</a>
-                {{else}}
-                  <span>{{value}}</span>
-                {{/if}}
-              </dd>
-            </div>
-          {{/each}}
-        </dl>
+        <section class="panel hero-panel">
+          <p class="section-label">Quick Contact</p>
+          <dl class="contact-grid">
+            {{#each contacts}}
+              <div class="contact-item">
+                <dt>{{label}}</dt>
+                <dd>
+                  {{#if href}}
+                    <a href="{{href}}">{{value}}</a>
+                  {{else}}
+                    <span>{{value}}</span>
+                  {{/if}}
+                </dd>
+              </div>
+            {{/each}}
+          </dl>
+        </section>
       </header>
 
       <div class="content-grid">

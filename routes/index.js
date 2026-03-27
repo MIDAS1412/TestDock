@@ -7,6 +7,11 @@ router.get('/', function(req, res, next) {
     title: 'Nguy\u1ec5n Quang D\u0169ng',
     role: 'Front-end Developer (Intern/Fresher)',
     summary: 'Information Technology student passionate about building user interfaces (UI/UX). Seeking a Front-end Developer internship to apply knowledge of HTML, CSS, JavaScript, and frameworks such as React or Vue in real projects.',
+    highlights: [
+      'Open to Front-end Internship',
+      'Responsive UI and React',
+      'Based in Thu Duc, Ho Chi Minh City'
+    ],
     contacts: [
       { label: 'Phone', value: '0786121131', href: 'tel:0786121131' },
       { label: 'Date of Birth', value: '14/12/2004' },
