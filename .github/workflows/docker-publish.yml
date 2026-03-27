@@ -13,8 +13,8 @@ on:
 
 env:
   IMAGE_NAME: ${{ vars.DOCKERHUB_IMAGE }}
-  CONTAINER_PORT: 3000
-  DEPLOY_SLOT: 2
+  CONTAINER_PORT: 80
+  DEPLOY_SLOT: 3
 
 jobs:
   docker:

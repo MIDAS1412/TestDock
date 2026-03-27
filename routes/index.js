@@ -8,7 +8,9 @@ router.get('/', function(req, res, next) {
     headline: 'Inventory API Dashboard',
     description: 'Dich vu quan ly kho duoc dong goi san de build, deploy va giam sat tren GitHub Actions.',
     primaryAction: '/api/v1/inventory',
-    secondaryAction: '/health'
+    secondaryAction: '/health',
+    containerPort: '80',
+    deploySlot: 'S3'
   });
 });
 
